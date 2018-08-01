@@ -1,0 +1,15 @@
+<h2>Pizzas</h2>
+<div *ngIf="pizzas">
+  <ol class="pizzas">
+    <li *ngFor="let pizza of pizzas"
+        [class.selected]="pizza === selectedPizza"
+        (click)="onSelect(pizza)">
+      <a (click)="onSelect(pizza); gotoDetail(pizza)">{{pizza.name}}</a>
+      <input id="price" [(ngModel)]="pizza.price" placeholder="price">
+      <button class="update"
+              (click)="onSelect(pizza); save(pizza); $event.stopPropagation()">Update</button>
+    </li>
+  </ol>
+  Price <input id="priceUpdate" [(ngModel)]="priceUpdate"><button class="update" (click)="updateAll(priceUpdate); $event.stopPropagation()">Update All</button>
+
+</div>

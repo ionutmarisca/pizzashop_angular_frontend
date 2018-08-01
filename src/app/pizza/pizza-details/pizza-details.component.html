@@ -1,0 +1,8 @@
+<div *ngIf="pizza">
+  <p>
+    Ingredients for {{pizza.name}}
+  </p>
+  <li *ngFor="let ingredient of pizza.ingredients">
+    {{ingredient}}
+  </li>
+</div>
